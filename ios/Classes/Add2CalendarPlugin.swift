@@ -12,11 +12,11 @@ extension Date {
 
 var statusBarStyle = UIApplication.shared.statusBarStyle
 
-public class SwiftAdd2CalendarPlugin: NSObject, FlutterPlugin {
+public class Add2CalendarPlugin: NSObject, FlutterPlugin {
     
     public static func register(with registrar: FlutterPluginRegistrar) {
       let channel = FlutterMethodChannel(name: "add_2_calendar", binaryMessenger: registrar.messenger())
-      let instance = SwiftAdd2CalendarPlugin()
+      let instance = Add2CalendarPlugin()
       registrar.addMethodCallDelegate(instance, channel: channel)
     }
 
@@ -156,7 +156,7 @@ public class SwiftAdd2CalendarPlugin: NSObject, FlutterPlugin {
     }
 }
 
-extension SwiftAdd2CalendarPlugin: EKEventEditViewDelegate {
+extension Add2CalendarPlugin: EKEventEditViewDelegate {
     
     public func eventEditViewController(_ controller: EKEventEditViewController, didCompleteWith action: EKEventEditViewAction) {
         controller.dismiss(animated: true, completion: {
